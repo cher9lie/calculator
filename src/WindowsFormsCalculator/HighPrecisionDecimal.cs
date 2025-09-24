@@ -210,12 +210,12 @@ namespace WindowsFormsCalculator
 
             // Newton's method for square root with high precision
             var x = new HighPrecisionDecimal(Math.Sqrt((double)this));
-            var two = new HighPrecisionDecimal(2);
+            var two = new HighPrecisionDecimal(2m);
 
             for (int i = 0; i < 50; i++) // More iterations for higher precision
             {
                 var newX = (x + this / x) / two;
-                if ((newX - x).Abs() < new HighPrecisionDecimal(1E-30))
+                if ((newX - x).Abs() < new HighPrecisionDecimal(1E-30d))
                     break;
                 x = newX;
             }
